@@ -13,21 +13,18 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/welcome_page"
+        tools:orientation="horizontal"/>
 
     <TextView
         android:id="@+id/btn_start"
+        style="?attr/buttonWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
         android:background="@drawable/btn_welcome"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:paddingStart="64dp"
-        android:paddingEnd="64dp"
         android:text="@string/start_working"
-        android:textAppearance="?attr/textAppearanceButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
