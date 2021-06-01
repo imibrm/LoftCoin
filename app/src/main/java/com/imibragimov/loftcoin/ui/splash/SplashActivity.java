@@ -1,4 +1,4 @@
-package com.imibragimov.loftcoin.activity;
+package com.imibragimov.loftcoin.ui.splash;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.imibragimov.loftcoin.R;
+import com.imibragimov.loftcoin.ui.welcome.WelcomeActivity;
+import com.imibragimov.loftcoin.ui.main.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
