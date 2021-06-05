@@ -55,11 +55,6 @@ public class WelcomeAdapter extends RecyclerView.Adapter<WelcomeAdapter.ViewHold
         inflater = LayoutInflater.from(recyclerView.getContext());
     }
 
-    /*@Override
-    public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onDetachedFromRecyclerView(recyclerView);
-    }*/
-
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         final WelcomePageBinding binding;
@@ -68,8 +63,6 @@ public class WelcomeAdapter extends RecyclerView.Adapter<WelcomeAdapter.ViewHold
             super(binding.getRoot());
             this.binding = binding;
         }
-
     }
-
 }
 
