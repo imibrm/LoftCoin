@@ -1,4 +1,4 @@
-package com.imibragimov.loftcoin.util;
+package com.imibragimov.loftcoin.widget;
 
 import android.os.SystemClock;
 import android.view.MotionEvent;

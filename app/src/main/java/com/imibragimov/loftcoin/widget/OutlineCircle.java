@@ -1,4 +1,4 @@
-package com.imibragimov.loftcoin.util;
+package com.imibragimov.loftcoin.widget;
 
 import android.graphics.Outline;
 import android.view.View;
@@ -26,4 +26,3 @@ public class OutlineCircle extends ViewOutlineProvider {
     }
 
 }
-

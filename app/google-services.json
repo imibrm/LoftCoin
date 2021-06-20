@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335615017561",
+    "project_id": "loftcoin-81148",
+    "storage_bucket": "loftcoin-81148.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335615017561:android:05f18c9f32c3e0d52de748",
+        "android_client_info": {
+          "package_name": "com.imibragimov.loftcoin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335615017561-tdn3cptobtlmt2ldovfcnav9t8vr3pap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imibragimov.loftcoin",
+            "certificate_hash": "284785938be219f630afd59719493feeaa17fcf2"
+          }
+        },
+        {
+          "client_id": "335615017561-5t76t90mtjrnimpl205bi6l152doc00h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3hv-4uDHXNhxEfVAxooDNYwh1Q3VKihU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335615017561-5t76t90mtjrnimpl205bi6l152doc00h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,14 +15,18 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.imibragimov.loftcoin.BaseComponent;
 import com.imibragimov.loftcoin.R;
 import com.imibragimov.loftcoin.databinding.FragmentRatesBinding;
-import com.imibragimov.loftcoin.util.PriceFormatter;
 
 import javax.inject.Inject;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 public class RatesFragment extends Fragment {
+
+    private final CompositeDisposable disposable = new CompositeDisposable();
 
     private final RatesComponent component;
 
@@ -62,8 +66,13 @@ public class RatesFragment extends Fragment {
         binding.recycler.setAdapter(adapter);
         binding.recycler.setHasFixedSize(true);
         binding.refresher.setOnRefreshListener(viewModel::refresh);
-        viewModel.coins().observe(getViewLifecycleOwner(), adapter::submitList);
-        viewModel.isRefreshing().observe(getViewLifecycleOwner(), binding.refresher::setRefreshing);
+        disposable.add(viewModel.coins().subscribe(adapter::submitList));
+        disposable.add(viewModel.onError().subscribe(e -> {
+            Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Retry", v -> viewModel.retry())
+                    .show();
+        }));
+        disposable.add(viewModel.isRefreshing().subscribe(binding.refresher::setRefreshing));
     }
 
     @Override
@@ -89,6 +98,7 @@ public class RatesFragment extends Fragment {
     @Override
     public void onDestroyView() {
         binding.recycler.setAdapter(null);
+        disposable.clear();
         super.onDestroyView();
     }
 

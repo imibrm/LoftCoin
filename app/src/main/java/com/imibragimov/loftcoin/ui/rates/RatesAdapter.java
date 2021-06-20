@@ -16,7 +16,7 @@ import com.imibragimov.loftcoin.R;
 import com.imibragimov.loftcoin.data.Coin;
 import com.imibragimov.loftcoin.databinding.LiRateBinding;
 import com.imibragimov.loftcoin.util.ImageLoader;
-import com.imibragimov.loftcoin.util.OutlineCircle;
+import com.imibragimov.loftcoin.widget.OutlineCircle;
 import com.imibragimov.loftcoin.util.PercentFormatter;
 import com.imibragimov.loftcoin.util.PriceFormatter;
 

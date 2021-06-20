@@ -14,7 +14,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.imibragimov.loftcoin.BaseComponent;
 import com.imibragimov.loftcoin.R;
 import com.imibragimov.loftcoin.databinding.DialogCurrencyBinding;
-import com.imibragimov.loftcoin.util.OnItemClick;
+import com.imibragimov.loftcoin.widget.OnItemClick;
 
 import javax.inject.Inject;
 
