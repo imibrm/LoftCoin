@@ -24,4 +24,6 @@ public class OutlineCircle extends ViewOutlineProvider {
         int minSize = Math.min(view.getWidth(), view.getHeight());
         outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), minSize / 2f);
     }
+
 }
+

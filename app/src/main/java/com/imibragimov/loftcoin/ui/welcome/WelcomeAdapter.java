@@ -63,6 +63,7 @@ public class WelcomeAdapter extends RecyclerView.Adapter<WelcomeAdapter.ViewHold
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
-}
 
+    }
+
+}
