@@ -1,5 +1,6 @@
 package com.imibragimov.loftcoin.ui.wallets;
 
+import android.graphics.Color;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -22,6 +23,12 @@ class TransactionsAdapter extends ListAdapter<Transaction, TransactionsAdapter.V
     private final PriceFormatter priceFormatter;
 
     private LayoutInflater inflater;
+
+    private int colorNegative = Color.RED; //
+
+    private int colorPositive = Color.GREEN; //
+
+    WalletsFragment walletsFragment; //
 
     @Inject
     TransactionsAdapter(PriceFormatter priceFormatter) {
@@ -46,13 +53,30 @@ class TransactionsAdapter extends ListAdapter<Transaction, TransactionsAdapter.V
     }
 
     @Override
+    //public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    //    final Transaction transaction = getItem(position);
+    //    holder.binding.amount1.setText(priceFormatter.format(transaction.amount()));
+    //    final double fiatAmount = transaction.amount() * transaction.coin().price();
+    //    holder.binding.amount2.setText(priceFormatter.format(transaction.coin().currencyCode(), fiatAmount));
+    //    holder.binding.timestamp.setText(DateFormat.getDateFormat(inflater.getContext()).format(transaction.createdAt()));
+    //}
+
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Transaction transaction = getItem(position);
-        holder.binding.amount1.setText(priceFormatter.format(transaction.amount()));
         final double fiatAmount = transaction.amount() * transaction.coin().price();
-        holder.binding.amount2.setText(priceFormatter.format(transaction.coin().currencyCode(), fiatAmount));
+        transaction.coin().currencyCode();
+        if (fiatAmount >= 0) {
+            holder.binding.amount1.setText("+" + transaction.amount() + " " + transaction.coin().symbol());
+            holder.binding.amount2.setText("+" + priceFormatter.format(transaction.coin().currencyCode(), fiatAmount));
+            holder.binding.amount2.setTextColor(colorPositive);
+        } else {
+            holder.binding.amount1.setText("" + transaction.amount() + " "  + transaction.coin().symbol());
+            holder.binding.amount2.setText("" + priceFormatter.format(transaction.coin().currencyCode(), fiatAmount));
+            holder.binding.amount2.setTextColor(colorNegative);
+        }
         holder.binding.timestamp.setText(DateFormat.getDateFormat(inflater.getContext()).format(transaction.createdAt()));
     }
+
 
     @Override
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
